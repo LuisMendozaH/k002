@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<translations lang="en">
+    <!-- appbar section -->
+    <string name="str_menu_home_option">home</string>
+    <string name="str_menu_benefits_option">benefits</string>
+    <string name="str_menu_howitworks_option">how it works</string>
+    <string name="str_menu_resources_option">resources</string>
+    <string name="str_menu_getstarted_option">get started</string>
+    <string name="str_search_field_placeholder">Search</string>
+
+    <!-- Signup section -->
+    <string name="str_create_account_label">Create account</string>
+    <string name="str_signup_name_field">Name</string>
+    <string name="str_signup_lastname_field">Last name</string>
+    <string name="str_signup_email_field">Email</string>
+    <string name="str_signup_phone_field">Phone number</string>
+    <string name="str_signup_password_field">Password</string>
+    <string name="str_signup_confirm_password_field">Confirm password</string>
+</translations>

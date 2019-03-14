@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<translations lang="es">
+    <!-- appbar section -->
+    <string name="str_menu_home_option">Inicio</string>
+    <string name="str_menu_benefits_option">Beneficios</string>
+    <string name="str_menu_howitworks_option">Cómo funciona</string>
+    <string name="str_menu_resources_option">Recursos</string>
+    <string name="str_menu_getstarted_option">Empezar</string>
+    <string name="str_search_field_placeholder">Buscar</string>
+
+    <!-- Signup section -->
+    <string name="str_create_account_label">Crear cuenta</string>
+    <string name="str_signup_name_field">Nombre</string>
+    <string name="str_signup_lastname_field">Apellido</string>
+    <string name="str_signup_email_field">Correo electrónico</string>
+    <string name="str_signup_phone_field">Número de celular</string>
+    <string name="str_signup_password_field">Contraseña</string>
+    <string name="str_signup_confirm_password_field">Confirmar contraseña</string>
+    <string name="str_signup_password_requirements">Usa 8 o más caracteres combinando letras, números y simbolos</string>
+    <string name="str_signup_accept_terms">Acepto términos de uso</string>
+    <string name="str_signup_button">Registrar</string>
+
+    <!-- Login section -->
+    <string name="str_login_label">Inicio de sesión</string>
+    <string name="str_login_desc_label">Inicia sesión para {{}}</string>
+    <string name="str_login_email_field">Correo electrónico</string>
+    <string name="str_login_password_field">Contraseña</string>
+    <string name="str_login_forgot_email_label">Olvidé mi correo electrónico</string>
+    <string name="str_login_forgot_password_label">Olvidé mi contraseña</string>
+    <string name="str_login_next_step_btn">Siguiente</string>
+
+    <!-- Footer section -->
+    <string name="str_footer_terms_label">Términos de uso</string>
+    <string name="str_footer_about_label">Acerca de</string>
+    <string name="str_footer_community_forum_label">Foro de la comunidad</string>
+    <string name="str_footer_privacy_label">Privacidad</string>
+    <string name="str_footer_contact_label">Contacto</string>
+    <string name="str_footer_help_label">Ayuda</string>
+
+    <!--  Errors -->
+    <string name="str_error">Ocurrió un error</string>
+    <string name="str_unknown_error">Ocurrió un error desconocido</string>
+    <string name="str_error_invalid_name">El nombre solo debe contener letras</string>
+    <string name="str_error_invalid_lastname">El apellido solo debe contener letras</string>
+    <string name="str_error_invalid_email">El correo electrónico no es válido</string>
+    <string name="str_error_invalid_phone">El número de celular no es válido</string>
+    <string name="str_error_password_too_short">La contraseña es muy corta</string>
+    <string name="str_error_password_too_long">La contraseña es muy larga</string>
+    <string name="str_error_passwords_dont_match">Las contraseñas no coinciden</string>
+
+</translations>

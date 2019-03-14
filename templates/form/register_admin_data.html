@@ -1,0 +1,209 @@
+<style>
+.Ws9d {
+    position:relative;
+    padding:60px 0;
+    background-color:#F0F0F0
+}
+.Yjx2, .Ks12, .EGkf {
+    font-size:42px;
+    line-height:58px;
+    padding:10px 0px
+}
+.JJs8 {
+    font-size:22px;
+    line-height:1.5
+}
+.W74f {
+    width:100%;
+    height:36px;
+    min-height:36px
+}
+.W74f + label {
+    font-size:14px;
+    margin-top:10px
+}
+.ww8E {
+    position:relative;
+}
+.ww8E > .Jsw4 {
+    position:relative
+}
+.Jf83 {
+    display:flex
+}
+.Jf83 input {
+    min-width:100%
+}
+.Jf92 > div {
+    position:relative;
+    display:inherit
+}
+.Jf92 > div > input {
+    width:inherit;
+    min-width:100%
+}
+.Jy8f7 {
+    position:relative;
+    display: -webkit-flex;
+    -webkit-align-items:center;
+    display:flex;
+    align-items:center;
+    padding:20px 0;
+    margin:0 120px
+}
+.Jx7w {
+    position:relative
+}
+.Ks88 {
+    margin:0 80px
+}
+.whT8 {
+    width:420px
+}
+.Cnz7 {
+    background-color:#FBFBFB;
+    padding:32px 38px 62px 38px;
+    position:relative;
+    border-radius:3px;
+    border:1px solid #F5F5F5;
+    box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.08);
+}
+.Jggj {
+    -webkit-transition:opacity .3s ease;
+    -moz-transition:opacity .3s ease;
+    -ms-transition:opacity .3s ease;
+    -o-transition:opacity .3s ease;
+    transition:opacity .3s ease; 
+}
+.jjWo {
+    width:45%;
+}
+.jjWw {
+    width:55%;
+    margin-left:10px
+}
+.snNd > * {
+    display:inline-block;
+    vertical-align:top
+}
+.snNd > label {
+    line-height:32px;
+    font-size:13px;
+    cursor:pointer
+}
+.Hd8w, .dJdw, .dKjv {
+    font-size:18px;
+    line-height:28px;
+    padding:14px 0px
+}
+.Jn8f {
+    font-size:13px;
+    margin:8px 0px
+}
+.Kg72 {
+    padding:10px 0 14px 0
+}
+.Yjs0 {
+    position:relative;
+    margin-bottom:0
+}
+.JwYY {
+    font-size:13px;
+}
+</style>
+
+<div class="Ws9d">
+    <div class="Jy8f7 JS73">
+        <div class="Jx7w Ks88">
+            <div>
+                <div>
+                    <h2 class="Yjx2">{{translate.str_description}}</h2>
+                    <p class="JJs8" contenteditable="true"></p>
+                </div>
+            </div>
+        </div>
+        <div class="Jx7w Ks84">
+            <div class="whT8 J77d">
+                <form class="Cnz7" action="/ajax/register_admin?reg=0" method="post" accept-charset="utf-8" data-validate="signup">
+                    <div class="Jggj Hd72" data-rg="0.1" data-role="registration-card">
+                        <div class="Cn8w">
+                            <h2 class="Hd8w">{{translate.str_create_account_label}}</h2>
+                        </div>
+                        <div class="Cn8w">
+                            <div class="">
+                                <div class="Jtt8 Yjs0" data-jsa="v:name-lastname">
+                                    <div class="ww8E Jf83"> 
+                                        <div class="Jsw4 jjWo">
+                                            <input aria-label="{{translate.str_signup_name_field}}" id="j_0_a" name="name" class="W74f md-input md-outline" type="text" maxlength="40" spellcheck="false" data-validate="@name:h_0_1" autocomplete="name">
+                                            <label for="j_0_a">{{translate.str_signup_name_field}}</label>
+                                        </div>
+                                        <div class="Jsw4 jjWw">
+                                            <input aria-label="{{translate.str_signup_lastname_field}}" id="j_0_b" name="lastname" class="W74f md-input md-outline" type="text" maxlength="50" spellcheck="false" data-validate="@name:h_0_1" autocomplete="name">
+                                            <label for="j_0_b">{{translate.str_signup_lastname_field}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="Kg72 Mdu8">
+                                        <div id="h_0_1" class="JwYY"></div>
+                                    </div>
+                                </div>
+                                <div class="Jtt8 Yjs0" data-jsa="v:email">
+                                    <div class="ww8E Jf83"> 
+                                        <input aria-label="{{translate.str_signup_email_field}}" id="j_0_c" name="email" class="W74f md-input md-outline" type="email" maxlength="128" spellcheck="false" data-validate="@email:h_0_2" autocomplete="email">
+                                        <label for="j_0_c">{{translate.str_signup_email_field}}</label>
+                                    </div>
+                                    <div class="Kg72 Mdu8">
+                                        <div id="h_0_2" class="JwYY"></div>
+                                    </div>
+                                </div>
+                                <div class="Jtt8 Yjs0" data-jsa="v:phone">
+                                    <div class="ww8E Jf83"> 
+                                        <input aria-label="{{translate.str_signup_phone_field}}" id="j_0_d" name="email" class="W74f md-input md-outline" type="text" maxlength="12" spellcheck="false" data-validate="@phone:h_0_3" autocomplete="tel">
+                                        <label for="j_0_d">{{translate.str_signup_phone_field}}</label>
+                                    </div>
+                                    <div class="Kg72 Mdu8">
+                                        <div id="h_0_3" class="JwYY"></div>
+                                    </div>
+                                </div>
+                                <div class="Jtt8 Yjs0" data-jsa="v:password-confirm">
+                                    <div class="ww8E Jf83"> 
+                                        <div class="Jsw4 jjWo">
+                                            <input aria-label="{{translate.str_signup_password_field}}" id="j_0_e" name="name" class="W74f md-input md-outline" type="password" maxlength="40" spellcheck="false" data-validate="@password:h_0_4" autocomplete="new-password">
+                                            <label for="j_0_e">{{translate.str_signup_password_field}}</label>
+                                        </div>
+                                        <div class="Jsw4 jjWw">
+                                            <input aria-label="{{translate.str_signup_confirm_password_field}}" id="j_0_f" name="lastname" class="W74f md-input md-outline" type="password" maxlength="40" spellcheck="false" data-validate="@password:h_0_4" autocomplete="new-password">
+                                            <label for="j_0_f">{{translate.str_signup_confirm_password_field}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="Kg72 Mdu8">
+                                        <div id="h_0_4" class="JwYY"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Cn8w">
+                            <div style="display:flex">
+                                <div class="snNd Hw7s">
+                                    <div id="j_0_g" aria-checked="false" class="md-checkbox Jjf8" role="checkbox" tabindex="0" aria-labelledby="Y958D">
+                                        <span class="md-icon _ic_0e5"></span>
+                                        <div class="md-ripple fill"></div>
+                                    </div>
+                                    <label class="JJvn" id="Y958D" for="j_0_g">{{translate.str_signup_accept_terms}}</label>
+                                </div>
+                                <div class="Jwnc" style="margin-left:auto">
+                                    <button class="md-button md-blue600" raised type="submit">{{translate.str_signup_button}}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="charset" value="¢+€">
+                    <input type="hidden" name="timestamp" value="">
+                    <input type="hidden" name="campaign">
+                    <input type="hidden" name="token" value="byg3LEnWdiWBtIFf9HWtQYKElc1XWzN6tKjWjo3iRFrk4oMDmKXPm55dPuI8">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

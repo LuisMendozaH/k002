@@ -1,0 +1,109 @@
+# Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.+) index.php?url=$1 [NC,L,QSA]
+
+<IfModule mod_php4.c>
+    php_value zlib.output_compression 16386
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header unset ETag
+
+    # Serve gzip compressed CSS files if they exist 
+    # and the client accepts gzip.
+    RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+    RewriteCond "%{REQUEST_FILENAME}\.gz" -s
+    RewriteRule "^(.*)\.css" "$1\.css\.gz" [QSA]
+
+    # Serve gzip compressed JS files if they exist 
+    # and the client accepts gzip.
+    RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+    RewriteCond "%{REQUEST_FILENAME}\.gz" -s
+    RewriteRule "^(.*)\.js" "$1\.js\.gz" [QSA]
+
+
+    # Serve correct content types, and prevent mod_deflate double gzip.
+    RewriteRule "\.css\.gz$" "-" [T=text/css,E=no-gzip:1]
+    RewriteRule "\.js\.gz$" "-" [T=text/javascript,E=no-gzip:1]
+
+
+    <FilesMatch "(\.js\.gz|\.css\.gz)$"> 
+        # Serve correct encoding type.
+        Header append Content-Encoding gzip
+
+        # Force proxies to cache gzipped & 
+        # non-gzipped css/js files separately.
+        Header append Vary Accept-Encoding
+    </FilesMatch>
+
+    
+</IfModule>
+
+ServerSignature Off
+
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<FilesMatch ".(js)$">
+    Header set Access-Control-Allow-Credentials "true"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "public,max-age=3536000,immutable"
+    Header set Content-Security-Policy "default-src * data: blob:;script-src *"
+    Header set Content-Type "application/javascript; charset=utf-8"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</FilesMatch>
+
+<FilesMatch ".(css)$">
+    Header set Access-Control-Allow-Credentials "true"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "max-age=35000"
+    Header set Content-Type "text/css; charset=utf-8"
+    Header set Timing-Allow-Origin "*"
+    Header set X-Content-Type-options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    # DeflateCompressionLevel 9
+</IfModule>
+
+<IfModule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_dechunk Yes
+    mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+    mod_gzip_item_include handler ^cgi-script$
+    mod_gzip_item_include mime ^text/.*
+    mod_gzip_item_include mime ^application/javascript.*
+    mod_gzip_item_exclude mime ^image/.*
+    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+
+RewriteCond %{HTTP_USER_AGENT} ^Anarchie [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ASPSeek [OR]
+RewriteCond %{HTTP_USER_AGENT} ^attach [OR]
+RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteCond %{HTTP_USER_AGENT} wget [NC]
+RewriteRule .* - [F,L]
+                        
